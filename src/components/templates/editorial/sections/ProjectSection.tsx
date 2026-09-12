@@ -25,7 +25,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects, globalSetting
           const projectLink = getProjectLinkMeta(project);
 
           return (
-          <motion.div key={project.id} layout="position" className="relative pb-6 last:pb-0" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+          <motion.div data-section-item key={project.id} layout="position" className="relative pb-6 last:pb-0" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
             
             <motion.h4 layout="position" className="font-bold text-black" style={{ fontSize: `${globalSettings?.subheaderSize || 18}px`, lineHeight: "1.2" }}>
               {project.name}
@@ -46,7 +46,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects, globalSetting
             </motion.div>
             
             {project.description && (
-              <motion.div
+              <motion.div data-section-body
                 layout="position"
                 className="mt-2 text-gray-800 prose prose-sm max-w-none prose-p:my-1 [&>ul]:pl-4 [&>ul]:mt-0 [&>ul>li]:my-0.5 marker:text-black text-left"
                 style={{ fontSize: `${globalSettings?.baseFontSize || 13}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}

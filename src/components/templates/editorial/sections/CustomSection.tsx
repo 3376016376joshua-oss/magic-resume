@@ -23,8 +23,8 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
       <SectionTitle title={title} type="custom" globalSettings={globalSettings} showTitle={showTitle} />
       <AnimatePresence mode="popLayout">
         {visibleItems.map((item) => (
-          <motion.div key={item.id} layout="position" className="relative pb-6 last:pb-0" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-            <motion.div layout="position" className="flex items-center gap-2">
+          <motion.div data-section-item key={item.id} layout="position" className="relative pb-6 last:pb-0" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+            <motion.div data-section-header layout="position" className="flex items-center gap-2">
               <div className="flex-[1.5]">
                 <h4 className="font-bold text-black" style={{ fontSize: `${globalSettings?.subheaderSize || 18}px` }}>{item.title}</h4>
               </div>
@@ -38,7 +38,7 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
               </span>
             </motion.div>
             {item.description && (
-              <motion.div
+              <motion.div data-section-body
                 layout="position"
                 className="mt-2 text-gray-800 prose prose-sm max-w-none prose-p:my-1 [&>ul]:pl-4 [&>ul]:mt-0 [&>ul>li]:my-0.5 marker:text-black"
                 style={{ fontSize: `${globalSettings?.baseFontSize || 14}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}

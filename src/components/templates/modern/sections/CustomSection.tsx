@@ -25,9 +25,9 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
             <SectionTitle title={title} type="custom" globalSettings={globalSettings} showTitle={showTitle} />
             <AnimatePresence mode="popLayout">
                 {visibleItems.map((item) => (
-                    <motion.div key={item.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                        <motion.div layout="position" className="flex items-center justify-between gap-4">
-                            <div className={cn("flex items-center gap-2 truncate", flexLayout ? "" : "flex-1")}>
+                    <motion.div data-section-item key={item.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+                        <motion.div data-section-header layout="position" className="flex items-center justify-between gap-4">
+                            <div data-section-header className={cn("flex items-center gap-2 truncate", flexLayout ? "" : "flex-1")}>
                                 <h4 className="font-bold truncate" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{item.title}</h4>
                             </div>
                             {centerSubtitle && (
@@ -43,7 +43,7 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
                             <motion.div layout="position" className="text-subtitleFont mt-1" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{item.subtitle}</motion.div>
                         )}
                         {item.description && (
-                            <motion.div layout="position" className="mt-1 text-baseFont"
+                            <motion.div data-section-body layout="position" className="mt-1 text-baseFont"
                                 style={{ fontSize: `${globalSettings?.baseFontSize || 14}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}
                                 dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(item.description) }}
                             />

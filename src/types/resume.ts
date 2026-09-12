@@ -1,3 +1,5 @@
+import type { SectionLayoutMap } from "./sectionLayout";
+
 export interface PhotoConfig {
   width: number;
   height: number;
@@ -198,6 +200,7 @@ export interface ResumeData {
   draggingProjectId: string | null;
   menuSections: MenuSection[];
   globalSettings: GlobalSettings;
+  sectionLayouts?: SectionLayoutMap;
 }
 
 export interface ResumeStore {

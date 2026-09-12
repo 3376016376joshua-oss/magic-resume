@@ -24,8 +24,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
             <SectionTitle type="experience" globalSettings={globalSettings} showTitle={showTitle} />
             <AnimatePresence mode="popLayout">
                 {visibleExperiences?.map((exp) => (
-                    <motion.div key={exp.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                        <motion.div className="flex items-center gap-2">
+                    <motion.div data-section-item key={exp.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+                        <motion.div data-section-header className="flex items-center gap-2">
                             <div className={`font-bold ${flexLayout ? "" : "flex-[1.5]"}`} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
                                 {exp.company}
                             </div>
@@ -42,7 +42,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
                             <motion.div className="text-subtitleFont" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{exp.position}</motion.div>
                         )}
                         {exp.details && (
-                            <motion.div className="mt-1 text-baseFont" dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(exp.details) }}
+                            <motion.div data-section-body className="mt-1 text-baseFont" dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(exp.details) }}
                                 style={{ fontSize: `${globalSettings?.baseFontSize || 14}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}
                             />
                         )}

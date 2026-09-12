@@ -11,6 +11,8 @@ import CustomPanel from "./custom/CustomPanel";
 import SkillPanel from "./skills/SkillPanel";
 import SelfEvaluationPanel from "./self-evaluation/SelfEvaluationPanel";
 import CertificatesPanel from "./certificates/CertificatesPanel";
+import SectionLayoutSettings from "./layout/SectionLayoutSettings";
+import { DEFAULT_TEMPLATES } from "@/components/templates/registry";
 import {
   Tooltip,
   TooltipContent,
@@ -112,6 +114,14 @@ export function EditPanel() {
             )}
           </div>
         </motion.div>
+
+        {activeSection !== "basic" && menuSections.some((section) => section.id === activeSection) && (
+          <SectionLayoutSettings
+            key={`${activeResume.id}-${activeSection}`}
+            sectionId={activeSection}
+            capabilities={DEFAULT_TEMPLATES.find((template) => template.id === activeResume.templateId)?.sectionLayout}
+          />
+        )}
 
         <motion.div
           className={cn(

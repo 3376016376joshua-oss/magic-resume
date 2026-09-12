@@ -24,7 +24,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education, globalSe
       <SectionTitle type="education" globalSettings={globalSettings} showTitle={showTitle} />
       <AnimatePresence mode="popLayout">
         {visibleEducation?.map((edu) => (
-          <motion.div key={edu.id} layout="position" className={cn("relative pb-6 last:border-0 last:pb-0", showTimeline ? "pl-5 border-l-[1.5px] border-[#e5e7eb]" : "")} style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+          <motion.div data-section-item key={edu.id} layout="position" className={cn("relative pb-6 last:border-0 last:pb-0", showTimeline ? "pl-5 border-l-[1.5px] border-[#e5e7eb]" : "")} style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
             {showTimeline && <div className="absolute left-[-2.25px] top-2.5 w-1.5 h-1.5 bg-black rounded-full" />}
             
             <motion.h4 layout="position" className="font-bold text-black" style={{ fontSize: `${globalSettings?.subheaderSize || 18}px`, lineHeight: "1.2" }}>
@@ -39,7 +39,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education, globalSe
             </motion.div>
             
             {edu.description && (
-              <motion.div
+              <motion.div data-section-body
                 layout="position"
                 className="mt-2 text-gray-800 prose prose-sm max-w-none prose-p:my-1 [&>ul]:pl-4 [&>ul]:mt-0 [&>ul>li]:my-0.5 marker:text-black"
                 style={{ fontSize: `${globalSettings?.baseFontSize || 13}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}

@@ -9,7 +9,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates 
     if (!certificates || certificates.length === 0) return null;
 
     return (
-        <div className="flex flex-wrap gap-2 w-full mt-2">
+        <div data-section-item className="flex flex-wrap gap-2 w-full mt-2">
             {certificates.map((cert) => (
                 <div
                     key={cert.id}

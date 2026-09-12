@@ -23,8 +23,8 @@ const EducationSection = ({ education, globalSettings, showTitle = true }: Educa
             <SectionTitle type="education" globalSettings={globalSettings} showTitle={showTitle} />
             <AnimatePresence mode="popLayout">
                 {visibleEducation?.map((edu) => (
-                    <motion.div key={edu.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                        <motion.div layout="position" className="flex items-center gap-2">
+                    <motion.div data-section-item key={edu.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+                        <motion.div data-section-header layout="position" className="flex items-center gap-2">
                             <div className={`font-bold ${flexLayout ? "" : "flex-[1.5]"}`} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
                                 {edu.school}
                             </div>
@@ -46,7 +46,7 @@ const EducationSection = ({ education, globalSettings, showTitle = true }: Educa
                             </motion.div>
                         )}
                         {hasMeaningfulRichTextContent(edu.description) && (
-                            <motion.div layout="position" className="mt-1 text-baseFont"
+                            <motion.div data-section-body layout="position" className="mt-1 text-baseFont"
                                 style={{ fontSize: `${globalSettings?.baseFontSize || 14}px`, lineHeight: globalSettings?.lineHeight || 1.6 }}
                                 dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(edu.description) }}
                             />

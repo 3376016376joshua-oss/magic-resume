@@ -31,8 +31,8 @@ const EducationSection = ({ education, globalSettings, showTitle = true, variant
             />
             <AnimatePresence mode="popLayout">
                 {visibleEducation?.map((edu) => (
-                    <motion.div key={edu.id} layout="position" style={{ marginTop: isSidebar ? "12px" : `${globalSettings?.paragraphSpacing}px` }}>
-                        <div className={cn("flex gap-4 items-center justify-between", isSidebar && "flex-col items-start gap-1")}>
+                    <motion.div data-section-item key={edu.id} layout="position" style={{ marginTop: isSidebar ? "12px" : `${globalSettings?.paragraphSpacing}px` }}>
+                        <div data-section-header className={cn("flex gap-4 items-center justify-between", isSidebar && "flex-col items-start gap-1")}>
                             <div className={cn("font-bold truncate", !flexLayout && !isSidebar && "flex-1")}
                                 style={{ fontSize: `${isSidebar ? (globalSettings?.baseFontSize || 14) + 2 : (globalSettings?.subheaderSize || 16)}px`, color: isSidebar ? "#fff" : "inherit" }}>
                                 {edu.school}
@@ -58,7 +58,7 @@ const EducationSection = ({ education, globalSettings, showTitle = true, variant
                             </div>
                         )}
                         {hasMeaningfulRichTextContent(edu.description) && (
-                            <motion.div layout="position" className={cn("mt-1 text-baseFont", isSidebar && " opacity-80")}
+                            <motion.div data-section-body layout="position" className={cn("mt-1 text-baseFont", isSidebar && " opacity-80")}
                                 style={{
                                     fontSize: `${isSidebar ? (globalSettings?.baseFontSize || 14) - 2 : (globalSettings?.baseFontSize || 14)}px`,
                                     lineHeight: globalSettings?.lineHeight || 1.6,

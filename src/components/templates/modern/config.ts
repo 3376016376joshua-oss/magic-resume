@@ -6,6 +6,7 @@ export const modernConfig: ResumeTemplate = {
   description: "经典两栏，突出个人特色",
   thumbnail: "modern",
   layout: "modern",
+  sectionLayout: { disabledHeaderAlignment: ["education"] },
   colorScheme: {
     primary: "#000000",
     secondary: "#6b7280",

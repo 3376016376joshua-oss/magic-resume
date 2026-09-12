@@ -6,6 +6,7 @@ export const editorialConfig: ResumeTemplate = {
   description: "高端画报风模板，大号精美衬线体与窄体无衬线的完美结合，附带专属侧边时光轴设计，极具奢华感。",
   thumbnail: "editorial",
   layout: "editorial",
+  sectionLayout: { disabledHeaderAlignment: ["education", "experience", "projects"] },
   colorScheme: {
     primary: "#000000",
     secondary: "#666666",
