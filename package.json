@@ -8,6 +8,8 @@
     "dev": "vite dev",
     "test:ai": "tsx --test tests/*.test.ts",
     "test:resume-import": "tsx --test tests/resume-import.test.ts",
+    "test:section-layout": "tsx --test tests/section-layout.test.ts",
+    "test:section-layout:browser": "tsx --test tests/section-layout.browser.ts",
     "build": "vite build",
     "start": "node server.mjs",
     "preview": "vite preview",

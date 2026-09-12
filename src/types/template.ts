@@ -21,6 +21,9 @@ export interface ResumeTemplate {
     layout?: "left" | "center" | "right";
   };
   availableSections?: string[];
+  sectionLayout?: {
+    disabledHeaderAlignment?: string[];
+  };
 }
 
 export interface TemplateConfig {

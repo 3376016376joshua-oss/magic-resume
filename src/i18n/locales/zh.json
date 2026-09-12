@@ -431,6 +431,26 @@
     }
   },
   "workbench": {
+    "sectionLayout": {
+      "title": "模块排版",
+      "inherited": "沿用全局与模板",
+      "customized": "已自定义",
+      "lineHeight": "内容行距（倍）",
+      "paragraphSpacing": "条目间距（px）",
+      "sectionSpacing": "模块上方间距（px）",
+      "padding": "模块内边距（px）",
+      "paddingTop": "上边距",
+      "paddingRight": "右边距",
+      "paddingBottom": "下边距",
+      "paddingLeft": "左边距",
+      "textAlign": "内容对齐",
+      "headerAlign": "标题行垂直对齐",
+      "templateDefault": "沿用模板",
+      "resetField": "恢复默认：{field}",
+      "resetAll": "重置模块排版",
+      "align": { "left": "左对齐", "center": "居中对齐", "right": "右对齐", "justify": "两端对齐" },
+      "vertical": { "start": "顶部对齐", "center": "居中对齐", "end": "底部对齐", "baseline": "基线对齐" }
+    },
     "sidePanel": {
       "layout": {
         "title": "布局",

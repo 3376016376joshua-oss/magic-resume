@@ -24,7 +24,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
       <SectionTitle type="experience" globalSettings={globalSettings} showTitle={showTitle} />
       <AnimatePresence mode="popLayout">
         {visibleExperiences?.map((exp) => (
-          <motion.div key={exp.id} layout="position" className={cn("relative pb-6 last:border-0 last:pb-0", showTimeline ? "pl-5 border-l-[1.5px] border-[#e5e7eb]" : "")} style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
+          <motion.div data-section-item key={exp.id} layout="position" className={cn("relative pb-6 last:border-0 last:pb-0", showTimeline ? "pl-5 border-l-[1.5px] border-[#e5e7eb]" : "")} style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
             {/* Timeline Dot */}
             {showTimeline && <div className="absolute left-[-2.25px] top-2.5 w-1.5 h-1.5 bg-black rounded-full" />}
             
@@ -42,7 +42,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
             
             {/* Details */}
             {exp.details && (
-              <motion.div
+              <motion.div data-section-body
                 layout="position"
                 className="mt-2 text-gray-800 prose prose-sm max-w-none prose-p:my-1 [&>ul]:pl-4 [&>ul]:mt-2 [&>ul]:mb-0 [&>ul>li]:my-0.5 marker:text-black"
                 dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(exp.details) }}

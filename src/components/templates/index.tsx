@@ -16,7 +16,7 @@ const ResumeTemplateComponent: React.FC<TemplateProps> = ({
   const TemplateComponent = getTemplateComponent(template.layout);
 
   return (
-    <TemplateProvider templateId={template.id} menuSections={data.menuSections}>
+    <TemplateProvider templateId={template.id} menuSections={data.menuSections} sectionLayouts={data.sectionLayouts}>
       <TemplateComponent data={data} template={template} />
     </TemplateProvider>
   );

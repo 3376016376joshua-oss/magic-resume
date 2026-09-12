@@ -482,6 +482,26 @@
     }
   },
   "workbench": {
+    "sectionLayout": {
+      "title": "Section layout",
+      "inherited": "Global and template defaults",
+      "customized": "Customized",
+      "lineHeight": "Line height (multiple)",
+      "paragraphSpacing": "Item spacing (px)",
+      "sectionSpacing": "Space above section (px)",
+      "padding": "Section padding (px)",
+      "paddingTop": "Top",
+      "paddingRight": "Right",
+      "paddingBottom": "Bottom",
+      "paddingLeft": "Left",
+      "textAlign": "Content alignment",
+      "headerAlign": "Header vertical alignment",
+      "templateDefault": "Template default",
+      "resetField": "Reset {field}",
+      "resetAll": "Reset section layout",
+      "align": { "left": "Align left", "center": "Align center", "right": "Align right", "justify": "Justify" },
+      "vertical": { "start": "Top", "center": "Center", "end": "Bottom", "baseline": "Baseline" }
+    },
     "sidePanel": {
       "layout": {
         "title": "Layout",

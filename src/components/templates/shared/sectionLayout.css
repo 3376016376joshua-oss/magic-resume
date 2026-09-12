@@ -1,0 +1,27 @@
+/* Explicit module choices take precedence over template and rich-text formatting.
+   Semantic markers keep these rules independent of each template's DOM layout. */
+[data-section-line-height] :is([data-section-item], [data-section-item] *, [data-section-body], [data-section-body] *) {
+  line-height: var(--section-line-height) !important;
+}
+
+[data-section-text-align] :is([data-section-item], [data-section-item] *, [data-section-body], [data-section-body] *) {
+  text-align: var(--section-text-align) !important;
+}
+
+[data-section-spacing] [data-section-items] {
+  margin-top: 0 !important;
+  row-gap: 0 !important;
+}
+
+[data-section-spacing] [data-section-item] {
+  margin-top: var(--section-item-spacing) !important;
+  padding-bottom: 0;
+}
+
+[data-section-header-align] [data-section-header] {
+  align-items: var(--section-header-align);
+}
+
+[data-section-header-align] [data-section-header] > * {
+  align-self: auto;
+}
